@@ -6,6 +6,17 @@
     android:layout_height="match_parent"
     tools:context="AddFrutaActivity">
 
+
+
+    <ImageView
+        android:id="@+id/iv_fruta_image_add"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:src="@drawable/maca"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tv_add_fruta"/>
+
     <EditText
         android:id="@+id/nome"
         android:layout_width="wrap_content"
@@ -16,10 +27,10 @@
         android:inputType="textPersonName"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView3" />
+        app:layout_constraintTop_toBottomOf="@+id/iv_fruta_image_add" />
 
     <TextView
-        android:id="@+id/textView3"
+        android:id="@+id/tv_add_fruta"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"

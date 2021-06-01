@@ -83,7 +83,7 @@ class MainActivity : AppCompatActivity(), AdapterFruta.OnClickListener {
     }
 
     private fun callFruitDetail(item: DCFruta) {
-        val intent = Intent(this, listaFrutas::class.java)
+        val intent = Intent(this, InfoActivity::class.java)
         intent.putExtra(SELEC_FRUTA, item)
         startActivityForResult(intent, CODE_RESULT_2)
     }
