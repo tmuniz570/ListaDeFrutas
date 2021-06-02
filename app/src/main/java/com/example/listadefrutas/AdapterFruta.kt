@@ -5,11 +5,11 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
+import kotlin.collections.ArrayList
 
-class AdapterFruta (private var clickListener: OnClickListener) :
-    RecyclerView.Adapter<AdapterFruta.HolderData>() {
+class AdapterFruta (private var clickListener: OnClickListener) : RecyclerView.Adapter<AdapterFruta.HolderData>() {
 
-    private var listaFrutas = ArrayList<DCFruta>()
+    private var listaFrutas : MutableList<DCFruta> = ArrayList()
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): HolderData {
         val rHD = LayoutInflater.from(parent.context).inflate(R.layout.item, parent, false)
@@ -32,7 +32,7 @@ class AdapterFruta (private var clickListener: OnClickListener) :
         var nome = v.findViewById<TextView>(R.id.itemNome)
         var desc = v.findViewById<TextView>(R.id.itemDesc)
 
-        fun initializeClick(item: ArrayList<DCFruta>, action: OnClickListener) {
+        fun initializeClick(item: MutableList<DCFruta>, action: OnClickListener) {
 
             itemView.setOnClickListener {
                 action.onItemClick(item[position], adapterPosition)
@@ -40,7 +40,7 @@ class AdapterFruta (private var clickListener: OnClickListener) :
         }
     }
 
-    fun get(frutas: ArrayList<DCFruta>) {
+    fun get(frutas: MutableList<DCFruta>) {
         listaFrutas = frutas
         notifyDataSetChanged()
     }

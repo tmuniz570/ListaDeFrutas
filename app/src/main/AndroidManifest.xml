@@ -12,11 +12,11 @@
         <activity
             android:name=".InfoActivity" />
         <activity
-            android:name=".AddFrutaActivity" />
+            android:name=".AddFrutaActivity"/>
         <activity
             android:name=".MainActivity"
-            android:label="@string/app_name"
-            android:theme="@style/Theme.ListaDeFrutas.NoActionBar">
+            android:label="@string/app_name">
+<!--            android:theme="@style/Theme.ListaDeFrutas.NoActionBar">-->
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
