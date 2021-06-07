@@ -12,8 +12,7 @@ class MainActivity : AppCompatActivity(), AdapterFruta.OnClickListener {
 
     private var listaFrutas : MutableList<DCFruta> = ArrayList()
 
-    private var adapter = AdapterFruta(this)
-//    private val mSwipeDrag by lazy { SwipeDragAdapter(listaFrutas, this::onFrutaClickListener) }
+    private val adapter by lazy { AdapterFruta(listaFrutas, this) }
 
     private lateinit var binding: ActivityMainBinding
 
@@ -26,7 +25,6 @@ class MainActivity : AppCompatActivity(), AdapterFruta.OnClickListener {
         const val SELEC_FRUTA = "selec_fruta"
         const val SELEC_FRUTA_RETURN = "selec_fruta_return"
 
-        const val MAIN_ACTIVITY_REQUEST_CODE = 1
         const val MAIN_ACTIVITY_REQUEST_CODE_EDIT = 2
         const val MAIN_ACTIVITY_FRUTA_EXTRA = "note_extra"
         const val MAIN_ACTIVITY_FRUTA_POSITION_EXTRA = "note_position_extra"
@@ -81,7 +79,7 @@ class MainActivity : AppCompatActivity(), AdapterFruta.OnClickListener {
             startActivityForResult(intent, CODE_RESULT_1)
         }
 
-        val itemTouchHelper = ItemTouchHelper(adapter)
+        val itemTouchHelper = ItemTouchHelper(SwipeDrag(adapter))
         itemTouchHelper.attachToRecyclerView(binding.viewfruta)
     }
 
