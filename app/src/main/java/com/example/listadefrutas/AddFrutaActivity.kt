@@ -40,7 +40,7 @@ class AddFrutaActivity : AppCompatActivity() {
         }
 
         binding.ivFrutaImageAdd.setOnClickListener {
-            Toast.makeText(this, "TESTANDO IV", Toast.LENGTH_SHORT).show()
+            Toast.makeText(this, "COLOCAR IMAGEM", Toast.LENGTH_SHORT).show()
         }
     }
 

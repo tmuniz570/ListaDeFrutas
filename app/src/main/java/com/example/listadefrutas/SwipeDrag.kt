@@ -3,7 +3,7 @@ package com.example.listadefrutas
 import androidx.recyclerview.widget.ItemTouchHelper
 import androidx.recyclerview.widget.RecyclerView
 
-class SwipeDrag (private val swipeDragAdapter: SwipeDragAdapter) : ItemTouchHelper.Callback() {
+class SwipeDrag (private val swipeDragAdapter: AdapterFruta) : ItemTouchHelper.Callback() {
     override fun getMovementFlags(recyclerView: RecyclerView, viewHolder: RecyclerView.ViewHolder): Int {
         val swipe = ItemTouchHelper.LEFT or ItemTouchHelper.RIGHT
         val drag = ItemTouchHelper.UP or ItemTouchHelper.DOWN
